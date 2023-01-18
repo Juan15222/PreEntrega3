@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#grilla {
+width: 100vw;
+height: 120vh;
+display: grid;
+grid-template-columns: 0.2fr repeat(2, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-template-areas: 
+"header header header"
+"main main main"
+"main main main"
+"footer footer footer";
+grid-column-gap: 2vh;
+grid-row-gap: 2vh;   
+}
+#grilla2 {
+width: 100vw;
+height: 120vh;
+display: grid;
+grid-template-columns: 0.2fr repeat(2, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-template-areas: 
+"header header header"
+"main main main"
+"main main main"
+"footer footer footer";
+grid-column-gap: 2vh;
+grid-row-gap: 2vh;   
+}
+
+header
+{
+    height: 15vh;
+    grid-area: header;
+}
+header nav div a {
+    font-size: larger;
+}
+
+header nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#Inicio {
+    height: 90vh;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    "secuno secdos aside"
+    "secuno secdos aside";
+    grid-column-gap: 2vh;
+    grid-row-gap: 2vh;
+}
+#Tienda {
+    height: 90vh;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    "secuno secdos aside"
+    "secuno secdos aside";
+}
+
+#section-uno {
+    background-color: aqua;
+    grid-area: secuno;
+    border: black 2px solid;
+}
+#section-dos {
+    background-color: aqua;
+    grid-area: secdos;
+    border: black 2px solid;
+}
+aside{
+    background-color: aqua;
+    grid-area: aside;
+}
+nav {
+    grid-area: nav;
+}
+footer {
+    height: 15vh;
+    background-color: blueviolet;
+    grid-area: footer;
+}
+.txt1 {
+    margin: 50px;
+}
+.txt2 {
+    margin: 5px;
+}
+.btn {
+    margin: 50px;
+    padding: 1rem 5rem;
+    background: red;
+    border: 0.1rem solid brown;
+    cursor: pointer;
+    position: relative;
+    border-radius: 3rem;
+    overflow: hidden;
+}
+.btn::before {
+    content: 'Hola';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-weight: 500;
+    text-shadow: .1rem .1rem .1rem black;
+    transition: .2s ease;
+}
+.btn::after {
+    content: 'Chau';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-weight: 500;
+    text-shadow: .1rem .1rem .1rem black;
+    transition: .2s ease;
+    opacity: 0;
+}
+.btn:hover::before {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+}
+.btn:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
